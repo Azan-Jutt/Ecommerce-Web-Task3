@@ -27,9 +27,22 @@
       <!-- Search Bar -->
       <div class="search-group flex items-center w-full max-w-md mt-2 md:mt-0 border border-blue-500 rounded-md">
         <input type="text" placeholder="Search" class="w-full border-0 rounded-l-md px-4 py-2 focus:outline-none">
-        <select class="border-0 px-3 py-2 focus:outline-none">
-          <option>All category</option>
+        <select class="border-0 px-3 py-2 focus:outline-none" onchange="navigateToPage(this)">
+          <option value="#">All Categories</option>
+          <option value="fetch.html">Detail  Page</option>
+          <option value="Products.html"> Product Page</option>
+
         </select>
+        
+        <script>
+          function navigateToPage(selectElement) {
+            const selectedValue = selectElement.value;
+            if (selectedValue !== "#") {
+              window.location.href = selectedValue; // Redirect to the selected page
+            }
+          }
+        </script>
+        
         <button class="bg-blue-500 text-white px-4 py-2 rounded-r-md focus:outline-none">Search</button>
       </div>
       
