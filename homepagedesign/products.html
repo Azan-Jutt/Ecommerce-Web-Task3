@@ -6,27 +6,13 @@
   <title>Responsive Header</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link href="./dist/output.css" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+
+ 
+ 
   <!-- Include Font Awesome CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="/js/script.js"></script>
-<script>
-  function navigateToPage(selectElement) {
-    const selectedValue = selectElement.value;
-    if (selectedValue !== "#" && selectedValue !== window.location.pathname) {
-      window.location.href = selectedValue;
-    }
-  }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const dropdown = document.querySelector("select");
-    dropdown.addEventListener("change", function () {
-      navigateToPage(this);
-    });
-  });
-</script>
 
 
   
@@ -45,14 +31,27 @@
       </div>
 
       <!-- Search Bar -->
-      <div class="search-group flex items-center w-full max-w-md mt-2 md:mt-0 border border-blue-500 rounded-md">
+      <div class="sea
+      zg4rch-group flex items-center w-full max-w-md mt-2 md:mt-0 border border-blue-500 rounded-md">
         <input type="text" placeholder="Search" class="w-full border-0 rounded-l-md px-4 py-2 focus:outline-none">
         <select class="border-0 px-3 py-2 focus:outline-none" onchange="navigateToPage(this)">
-          <option value="#">All Categories</option>
+          <option value="index.html">Home Page</option>
+          <option value="Products.html">Product  Page</option>
           <option value="fetch.html">Detail Page</option>
-          <option value="Products.html">Product Page</option>
-          <option value="./home/homepagedesign/index.html">Home Page</option>
+          <option value="cart.html"> Cart Page</option>
+          <option value="end.html"> Order Page</option>
+
         </select>
+        <script>
+          function navigateToPage(selectElement) {
+            const selectedValue = selectElement.value;
+            if (selectedValue !== "#" && selectedValue !== window.location.pathname) {
+              window.location.href = selectedValue;
+            }
+            
+          }
+        </script>
+        
         
        
         <button class="bg-blue-500 text-white px-4 py-2 rounded-r-md focus:outline-none">Search</button>
@@ -219,10 +218,10 @@
             <option>Price: Low to High</option>
             <option>Price: High to Low</option>
           </select>
-          <button class="border px-3 py-1 rounded">
+          <button class="border px-3 py-1 rounded" onclick="window.location.href='products.html';">
             <span class="inline-block w-4 h-4 bg-gray-400"><img src="GER.webp" alt=""></span>
           </button>
-          <button class="border px-3 py-1 rounded">
+          <button class="border px-3 py-1 rounded" onclick="window.location.href='product.html';">
             <span class="inline-block w-4 h-4 bg-gray-400"><img src="toggle.jpg" alt=""></span>
           </button>
         </div>
@@ -261,44 +260,60 @@
       <!-- Product Cards Grid -->
       <div class="grid grid-cols-4 gap-8">
         <!-- Product Card -->
-        <div class="bg-white p-4 rounded shadow-md mb-0">
-          <!-- Product Images Carousel -->
-          <img src="app.jpg" alt="" class="mb-2 rounded h-40 w-100">
-        
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
-          <p class="text-gray-600 text-sm">Camera - Black</p>
-        
-          <!-- Price Section -->
-          <div class="flex justify-between items-center mt-2">
-            <span class="text-yellow-500 font-bold">$99.50</span>
-            <span class="text-gray-400 line-through">$128.00</span>
-          </div>
-        
-          <!-- Rating Section (Stars vertically aligned) -->
-          <div class="flex flex-row items-center mt-2">
-            <!-- Star 1 -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
-            <!-- Star 2 -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
-            <!-- Star 3 -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
-            <!-- Star 4 -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
-          </div>
-        
-        
-          
-          <!-- Add to Cart Button -->
-          <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
-          </div>
+        <div class="bg-white p-4 rounded shadow-md mb-0 product-card">
+       
+     <!-- Product Images Carousel -->
+      <img src="app.jpg" alt="GoPro HERO6 4K Action Camera" class="mb-2 rounded h-40 w-100">
+      
+      <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+      <p class="text-gray-600 text-sm">Camera - Black</p>
+      
+      <!-- Price Section -->
+      <div class="flex justify-between items-center mt-2">
+        <span class="text-yellow-500 font-bold">$99.50</span>
+        <span class="text-gray-400 line-through">$128.00</span>
+      </div>
+      
+      <!-- Rating Section (Stars vertically aligned) -->
+        <!-- Rating Section (Stars vertically aligned) -->
+        <div class="flex flex-row items-center mt-2">
+          <!-- Star 1 -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
+          <!-- Star 2 -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
+          <!-- Star 3 -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
+          <!-- Star 4 -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
         </div>
+     
+    
+      <!-- Add to Cart Button -->
+      <div class="mt-4">
+        <a href="cart.html" class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300" onclick="addToCart('GoPro HERO6 4K Action Camera', '$99.50', '$128.00', 'app.jpg')">Add to Cart</a>
+      </div>
+    </div>
+    <script>
+      function addToCart(name, price, oldPrice, image) {
+  const product = {
+    name: name,
+    price: price,
+    oldPrice: oldPrice,
+    image: image,
+  };
+
+  localStorage.setItem('cartProduct', JSON.stringify(product));
+}
+
+    </script>
+    
+        
         <!-- card 2 -->
         <div class="bg-white p-4 rounded shadow-md mb-0">
           <!-- Product Images Carousel -->
           <img src="image 22-1.png" alt="" class="mb-2 rounded h-40 w-100">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">I phone 11PRo Max(Blue)</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -323,23 +338,27 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+               class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+               onclick="addToCart('I phone 11PRo Max(Blue)', '$99.50', '$128.00', 'image 22-1.png')">Add to Cart</a>
           </div>
         </div>
-        
+        <!-- //card 3 -->
         <div class="bg-white p-4 rounded shadow-md mb-0">
-          <!-- Product Images Carousel -->
-          <img src="image 33.png" alt="" class="mb-2 rounded h-40 w-100">
-        
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <!-- Product Image -->
+          <img src="image 33.png" alt="I Phone 11 ProMax (Red)" class="mb-2 rounded h-40 w-100">
+          
+          <!-- Product Title -->
+          <h3 class="font-semibold mt-3">I Phone 11 ProMax (Red)</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
-        
+          
           <!-- Price Section -->
           <div class="flex justify-between items-center mt-2">
             <span class="text-yellow-500 font-bold">$99.50</span>
             <span class="text-gray-400 line-through">$128.00</span>
           </div>
-        
+          
+          <!-- Rating Section (Stars vertically aligned) -->
           <!-- Rating Section (Stars vertically aligned) -->
           <div class="flex flex-row items-center mt-2">
             <!-- Star 1 -->
@@ -351,28 +370,33 @@
             <!-- Star 4 -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
           </div>
-        
-        
           
-          <!-- Add to Cart Button -->
+          <!-- Add to Cart Button with Anchor -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+               class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+               onclick="addToCart('I Phone 11 ProMax (Red)', '$99.50', '$128.00', 'image 33.png')">Add to Cart</a>
           </div>
         </div>
         
+       
+        <!-- //4t// -->
         <div class="bg-white p-4 rounded shadow-md mb-0">
-          <!-- Product Images Carousel -->
-          <img src="image 32.png" alt="" class="mb-2 rounded h-40 w-100">
-        
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <!-- Product Image -->
+          <a href="cart.html">
+            <img src="image 32.png" alt="Infix Hot 9" class="mb-2 rounded h-40 w-100">
+          </a>
+          
+          <!-- Product Title -->
+          <h3 class="font-semibold mt-3">Infix Hot 9</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
-        
+          
           <!-- Price Section -->
           <div class="flex justify-between items-center mt-2">
             <span class="text-yellow-500 font-bold">$99.50</span>
             <span class="text-gray-400 line-through">$128.00</span>
           </div>
-        
+          
           <!-- Rating Section (Stars vertically aligned) -->
           <div class="flex flex-row items-center mt-2">
             <!-- Star 1 -->
@@ -384,20 +408,21 @@
             <!-- Star 4 -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-4 h-4 text-yellow-500"><path d="M12 2l2.392 7.03H22l-5.615 4.08L16.785 22 12 17.93 7.215 22 7.615 13.11 2 9.03h7.608z"></path></svg>
           </div>
-        
-        
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+               class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+               onclick="addToCart('Infix Hot 9', '$99.50', '$128.00', 'image 32.png')">Add to Cart</a>
           </div>
         </div>
+        
         <!-- 2nd line -->
         <div class="bg-white p-4 rounded shadow-md mb-0">
           <!-- Product Images Carousel -->
           <img src="image 34.png" alt="" class="mb-2 rounded h-40 w-100">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">Laptop ThinkPad</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -422,14 +447,16 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+               class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+               onclick="addToCart('Laptop ThinkPad', '$99.50', '$128.00', 'image 34.png')">Add to Cart</a>
           </div>
         </div>
         <div class="bg-white p-4 rounded shadow-md mb-0">
           <!-- Product Images Carousel -->
           <img src="image 28.png" alt="" class="mb-2 rounded h-40 w-100">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">Camera action</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -454,14 +481,16 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+               class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+               onclick="addToCart('Camera action', '$99.50', '$128.00', 'image 28.png')">Add to Cart</a>
           </div>
         </div>
         <div class="bg-white p-4 rounded shadow-md mb-0">
           <!-- Product Images Carousel -->
           <img src="image 32.png" alt="" class="mb-2 rounded h-40 w-100">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">Android Mobile</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -486,14 +515,16 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+               class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+               onclick="addToCart('Android Mobile', '$99.50', '$128.00', 'image 32.png')">Add to Cart</a>
           </div>
         </div>
         <div class="bg-white p-4 rounded shadow-md mb-0">
           <!-- Product Images Carousel -->
           <img src="image 33.png" alt="" class="mb-2 rounded h-40 w-100">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">I phone 11 Pro Max</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -518,7 +549,9 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+            class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+            onclick="addToCart('I phone 11 pro Max', '$99.50', '$128.00', 'image 33.png')">Add to Cart</a>
           </div>
         </div>
         
@@ -527,7 +560,7 @@
           <!-- Product Images Carousel -->
           <img src="image 32.png" alt="" class="mb-2 rounded h-40 w-100">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">Tecno Cammon</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -552,14 +585,16 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+            class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+            onclick="addToCart('Tecno Cammon', '$99.50', '$128.00', 'image 32.png')">Add to Cart</a>
           </div>
         </div>
         <div class="bg-white p-4 rounded shadow-md mb-0">
           <!-- Product Images Carousel -->
           <img src="image 35.png" alt="" class="mb-2 rounded h-40 w-100 items-center">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">Watch</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -584,14 +619,16 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+            class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+            onclick="addToCart('Watch', '$99.50', '$128.00', 'image 35.png')">Add to Cart</a>
           </div>
         </div>
         <div class="bg-white p-4 rounded shadow-md mb-0">
           <!-- Product Images Carousel -->
           <img src="image 34.png" alt="" class="mb-2 rounded h-40 w-100">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">Dell laptop</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -616,14 +653,16 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+            class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+            onclick="addToCart('Dell laptop', '$99.50', '$128.00', 'image 34.png')">Add to Cart</a>
           </div>
         </div>
         <div class="bg-white p-4 rounded shadow-md mb-0">
           <!-- Product Images Carousel -->
           <img src="image 33-1.png" alt="" class="mb-2 rounded h-40 w-100">
         
-          <h3 class="font-semibold mt-3">GoPro HERO6 4K Action</h3>
+          <h3 class="font-semibold mt-3">14 pro Max</h3>
           <p class="text-gray-600 text-sm">Camera - Black</p>
         
           <!-- Price Section -->
@@ -648,7 +687,9 @@
           
           <!-- Add to Cart Button -->
           <div class="mt-4">
-            <a href="fetch.html" class="inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300">Add to Cart</a>
+            <a href="cart.html" 
+            class="add-to-cart-btn inline-block bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300"
+            onclick="addToCart('14 pro max', '$99.50', '$128.00', 'image 33-1.png')">Add to Cart</a>
           </div>
         </div>
         <!-- //boxes// -->

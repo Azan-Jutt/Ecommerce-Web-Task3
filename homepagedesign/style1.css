@@ -1,0 +1,44 @@
+@media (max-width: 640px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* Centering the logo */
+    header > .container {
+      text-align: center;
+    }
+  
+    /* Adjusting search bar to full width */
+    .max-w-md {
+      width: 100%;
+      margin-top: 1rem;
+    }
+  }
+  
+  /* Tablet Styles */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .container {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    /* Adjusting the spacing of elements */
+    .space-x-4 > * {
+      margin-right: 1rem;
+    }
+  }
+  
+  /* Desktop Styles */
+  @media (min-width: 1025px) {
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    /* Standard layout for larger screens */
+    .max-w-md {
+      max-width: 50%;
+    }
+}

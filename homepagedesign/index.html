@@ -8,25 +8,9 @@
   <link rel="stylesheet" href="style.css">
   <link href="./dist/output.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function navigateToPage(selectElement) {
-      const selectedValue = selectElement.value;
-      if (selectedValue !== "#" && selectedValue !== window.location.pathname) {
-        window.location.href = selectedValue;
-      }
-      
-    }
-  </script>
   
   
-  <script>
-    function navigateToPage(selectElement) {
-      const selectedValue = selectElement.value;
-      if (selectedValue !== "#") {
-        window.location.href = selectedValue; // Redirect to the selected page
-      }
-    }
-  </script>
+  
   
 
   
@@ -48,12 +32,23 @@
       <div class="search-group flex items-center w-full max-w-md mt-2 md:mt-0 border border-blue-500 rounded-md">
         <input type="text" placeholder="Search" class="w-full border-0 rounded-l-md px-4 py-2 focus:outline-none">
         <select class="border-0 px-3 py-2 focus:outline-none" onchange="navigateToPage(this)">
-          <option value="#">All Categories</option>
-          <option value="fetch.html">Detail  Page</option>
-          <option value="Products.html"> Product Page</option>
-          <option value="index.html"> Home Page</option>
+          <option value="index.html">Home Page</option>
+          <option value="Products.html">Product  Page</option>
+          <option value="fetch.html">Detail Page</option>
+          <option value="cart.html"> Cart Page</option>
+          <option value="end.html"> Order Page</option>
 
         </select>
+        <script>
+          function navigateToPage(selectElement) {
+            const selectedValue = selectElement.value;
+            if (selectedValue !== "#" && selectedValue !== window.location.pathname) {
+              window.location.href = selectedValue;
+            }
+            
+          }
+        </script>
+        
        
         <button class="bg-blue-500 text-white px-4 py-2 rounded-r-md focus:outline-none">Search</button>
       </div>
@@ -72,10 +67,12 @@
           <img src="heart.png" alt="Orders Icon" class="icon-large w-5 h-5">
           <span>Orders</span>
         </div>
-        <div class="flex items-center space-x-1">
-          <img src="cart.png" alt="Orders Icon" class="icon-large w-5 h-5">
-          <span>My cart</span>
-        </div>
+        <div class="flex items-center space-x-1 cursor-pointer" 
+        onclick="window.location.href='cart.html'">
+     <img src="cart.png" alt="Orders Icon" class="icon-large w-5 h-5">
+     <span>My cart</span>
+   </div>
+   
       </div>
     </div>
 <hr>
@@ -117,26 +114,30 @@
     <!-- SECTION -->
     <section class="section-container container mx-auto px-4 flex flex-col md:flex-row gap-4 p-4 bg-white rounded-md shadow-lg">
       <!-- Sidebar Menu -->
-      <div class="bg-white border rounded-md p-2 w-full md:w-1/4 max-h-screen overflow-auto">
-        <ul class="space-y-1">
+      <div class="bg-white border rounded-md p-2 w-full md:w-1/4  ">
+        <ul class="space-y-0.5">
           <li class="bg-blue-100 text-blue-700 font-semibold px-3 py-2 rounded-md">Automobiles</li>
-          <li>Clothes and wear</li>
-          <li>Home interiors</li>
-          <li>Computer and tech</li>
-          <li>Tools, equipment</li>
-          <li>Sports and outdoor</li>
-          <li>Animal and pets</li>
-          <li>Machinery tools</li>
-          <li>More category</li>
-        </ul>
+          <li class="hover:bg-blue-100 hover:text-blue-700 font-semibold px-3 py-2 rounded-md"><a href="product.html">Clothes and wear</a></li>
+          <li class="hover:bg-blue-100 hover:text-blue-700 font-semibold px-3 py-2 rounded-md"><a href="product-hunt.html">Home interiors</a></li>
+          <li class="hover:bg-blue-100 hover:text-blue-700 font-semibold px-3 py-2 rounded-md"><a href="product.html">Computer and tech</a></li>
+          <li class="hover:bg-blue-100 hover:text-blue-700 font-semibold px-3 py-2 rounded-md"><a href="product.html">Tools, equipment</a></li>
+          <li class="hover:bg-blue-100 hover:text-blue-700 font-semibold px-3 py-2 rounded-md"><a href="product.html">Sports and outdoor</a></li>
+          <li class="hover:bg-blue-100 hover:text-blue-700 font-semibold px-3 py-2 rounded-md"><a href="product.html">Animal and pets</a></li>
+          <li class="hover:bg-blue-100 hover:text-blue-700 font-semibold px-3 py-2 rounded-md"><a href="product.html">Machinery tools</a></li>
+          <li class="hover:bg-blue-100 hover:text-blue-700 font-semibold px-3 py-2 rounded-md"><a href="product.html">More category</a></li>
+        </ul> 
       </div>
       
       <!-- Main Banner -->
-      <div class=" rounded-md p-4 w-full md:w-1/2 flex justify-center items-center relative">
-        <img src="234.PNG" alt="Electronic items" class="w-full h-full object-cover rounded-md">
-        <div class="absolute text-center">
+      <div class=" rounded-md p-4 w-full md:w-1/2 h-fit" style="background: url(/home/homepagedesign/bgmain.png);background-repeat: no-repeat;">
+        
+        <div class=" px-8 pt-8 pb-40">
+          <h1 class="text-2xl font-semibold">Latest trending</h1>
+          <h1 class="text-2xl font-bold pb-6">Electronic items</h1>
+          <a href="#" class="px-4 py-2 bg-white rounded-md shadow-md shadow-gray-300 font-semibold">Learn more</a>
           <!-- Add banner text here if needed -->
         </div>
+        <div class=""></div>
       </div> 
 
       <!-- Right Side Panel -->
@@ -205,7 +206,7 @@
         <img src="watch.PNG" alt="Product Image" class="w-full h-33 rounded mb-2 object-cover">
 
         <h3 class="text-sm font-medium">Smart Watches</h3>
-        <button class="bg-red-500 text-white font-bold text-sm py-2 px-4 rounded-full border-2 border-gold-500 hover:bg-red-600 focus:outline-none"  onclick="window.location.href='products.html';">
+        <button class="bg-red-500 text-white font-bold text-sm py-2 px-4 rounded-full border-2 border-gold-500 hover:bg-red-600 focus:outline-none"  onclick="window.location.href='product.html';">
           -25%
         </button>
         
@@ -219,7 +220,7 @@
         <img src="lap .png" alt="Product Image" class="w-full h-33 rounded mb-2 object-cover">
 
         <h3 class="text-sm font-medium">Laptop</h3>
-        <button class="bg-red-500 text-white font-bold text-sm py-2 px-4 rounded-full border-2 border-gold-500 hover:bg-red-600 focus:outline-none" onclick="window.location.href='products.html';">
+        <button class="bg-red-500 text-white font-bold text-sm py-2 px-4 rounded-full border-2 border-gold-500 hover:bg-red-600 focus:outline-none" onclick="window.location.href='product.html';">
           -25%
         </button>
         
@@ -234,7 +235,7 @@
         <img src="cam.jpg" alt="Product Image" class="w-full h-33 rounded mb-2 object-cover">
 
         <h3 class="text-sm font-medium">Camera</h3>
-        <button class="bg-red-500 text-white font-bold text-sm py-2 px-4 rounded-full border-2 border-gold-500 hover:bg-red-600 focus:outline-none"  onclick="window.location.href='products.html';">
+        <button class="bg-red-500 text-white font-bold text-sm py-2 px-4 rounded-full border-2 border-gold-500 hover:bg-red-600 focus:outline-none"  onclick="window.location.href='product.html';">
           -25%
         </button>
         
@@ -248,7 +249,7 @@
         <img src="head1.jpg" alt="Product Image" class="w-34 h-33 rounded mb-2 object-cover">
 
         <h3 class="text-sm font-medium">Head Phone</h3>
-        <button class="bg-red-500 text-white font-bold text-sm py-2 px-4 rounded-full border-2 border-gold-500 hover:bg-red-600 focus:outline-none"  onclick="window.location.href='products.html';">
+        <button class="bg-red-500 text-white font-bold text-sm py-2 px-4 rounded-full border-2 border-gold-500 hover:bg-red-600 focus:outline-none"  onclick="window.location.href='product.html';">
           -25%
         </button>
         

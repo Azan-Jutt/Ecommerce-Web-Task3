@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Header</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  
+  
+  <!-- Include Font Awesome CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1rem;
+  }
+  .cart-card {
+    grid-column: span 4;
+    padding: 1rem;
+    background: rgb(241, 242, 245);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: solid rgb(113, 113, 231) 2px;
+   
+  }
+ 
+  .section {
+    grid-column: span 8;
+    padding: 1rem;
+    background: rgb(241, 242, 245);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3px;
+    border: solid rgb(113, 113, 231) 2px;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgb(104, 104, 173);
+    font-size:20px;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #067ff8;
+    
+    border-radius: 4px;
+  }
+</style>
+
+
+  
+</head>
+<body class="bg-grey-700">
+
+  <!-- Header -->
+  <header class="bg-gray-100 shadow-md">
+    <div class="container mx-auto px-4 py-2 flex justify-between items-center flex-wrap">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <div class="text-blue-500">
+          <img src="lock.png" alt="Orders Icon" class="icon-large w-5 h-5">
+        </div>
+        <span class="font-semibold text-lg" style="color:rgb(70, 189, 236); font-size: 1.5rem;">Brand</span>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-group flex items-center w-full max-w-md mt-2 md:mt-0 border border-blue-500 rounded-md">
+        <input type="text" placeholder="Search" class="w-full border-0 rounded-l-md px-4 py-2 focus:outline-none">
+        <select class="border-0 px-3 py-2 focus:outline-none" onchange="navigateToPage(this)">
+          <option value="index.html">Home Page</option>
+          <option value="Products.html">Product  Page</option>
+          <option value="fetch.html">Detail Page</option>
+          <option value="cart.html"> Cart Page</option>
+          <option value="end.html"> Order Page</option>
+
+        </select>
+        <script>
+          function navigateToPage(selectElement) {
+            const selectedValue = selectElement.value;
+            if (selectedValue !== "#" && selectedValue !== window.location.pathname) {
+              window.location.href = selectedValue;
+            }
+            
+          }
+        </script>
+        
+        
+       
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-r-md focus:outline-none">Search</button>
+      </div>
+      
+      <!-- User Menu -->
+      <div class="flex items-center space-x-4 mt-2 md:mt-0">
+        <div class="flex items-center space-x-1">
+          <img src="pro.png" alt="Orders Icon" class="icon-large w-5 h-5">
+          <span>Profile</span>
+        </div>
+        <div class="flex items-center space-x-1">
+          <img src="mess.png" alt="Orders Icon" class="icon-large w-5 h-5">
+          <span>Message</span>
+        </div>
+        <div class="flex items-center space-x-1">
+          <img src="heart.png" alt="Orders Icon" class="icon-large w-5 h-5">
+          <span>Orders</span>
+        </div>
+        <div class="flex items-center space-x-1">
+          <img src="cart.png" alt="Orders Icon" class="icon-large w-5 h-5">
+          <span>My cart</span>
+        </div>
+      </div>
+    </div>
+<hr>
+    <!-- Secondary Navigation -->
+    <div class="bg-white py-2">
+      <div class="container mx-auto px-4 flex justify-between items-center flex-wrap">
+        <div class="flex space-x-4 mt-2 md:mt-0">
+          <button class="flex items-center space-x-1">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+            </svg>
+            <span>All category</span>
+          </button>
+          <a href="#" class="hover:underline">Hot offers</a>
+          <a href="#" class="hover:underline">Gift boxes</a>
+          <a href="#" class="hover:underline">Projects</a>
+          <a href="#" class="hover:underline">Menu item</a>
+          <a href="#" class="hover:underline">Help</a>
+        </div>
+        <div class="flex items-center space-x-4 mt-2 md:mt-0">
+          <div class="flex items-center space-x-1">
+            <span>English USD</span>
+            <select></select>
+          </div>
+          <div class="flex items-center space-x-1">
+            <span>Ship to</span>
+            <select></select>
+            <img src="GER.webp" alt="Orders Icon" class="icon-large w-5 h-5">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container p-4 mx-auto">
+    <div class="row gap-8">
+      <ul class="flex space-x-12">
+        <li>Home></li>
+        <li>Clothing></li>
+        <li>Man's wear></li>
+        <li>Summer clothing></li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <div class="container mx-auto p-2 mt-0">
+    <div class="row">
+        <img src="bann.png" alt="" class="w-100 h-21">
+    </div>
+  </div>
+  <div class="container mx-auto p-4 grid grid-cols-12 gap-4" id="form-container">
+    <!-- Card Section (col-4) -->
+    <div class="col-span-4 cart-card">
+      <img id="product-image" src="" alt="Product Image" class="cart-image">
+      <h3 id="product-name" class="cart-product-name"></h3>
+      <p id="product-price" class="cart-product-price"></p>
+      <p id="product-old-price" class="line-through text-gray-500"></p>
+    </div>
+  
+    <!-- Form Section (col-8) -->
+    <div class="col-span-8 section">
+      <h1 style="text-align: center; color: rgb(94, 10, 250); font-size: 3rem;">Shipping Form</h1>
+      <form id="shipping-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" required>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" required>
+        </div>
+        <div class="form-group">
+          <label for="postal-code">Postal Code</label>
+          <input type="number" id="postal-code" required>
+        </div>
+        <div class="form-group">
+          <label>Payment Method</label>
+          <div>
+            <label>
+              <input type="radio" name="payment-method" value="Credit Card" required>
+              Credit Card
+            </label>
+            <label>
+              <input type="radio" name="payment-method" value="PayPal">
+              PayPal
+            </label>
+          </div>
+        </div>
+        <button type="button" class="add-to-cart-btn bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300" onclick="submitOrder()">Confirm Order</button>
+      </form>
+    </div>
+  </div>
+  
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Populate product details from localStorage
+    const product = JSON.parse(localStorage.getItem('cartProduct'));
+
+    if (product) {
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-name').textContent = product.name;
+      document.getElementById('product-price').textContent = product.price;
+      document.getElementById('product-old-price').textContent = product.oldPrice;
+    } else {
+      // Display message if no product is found
+      document.querySelector('.cart-card').innerHTML = '<p>No product in cart</p>';
+    }
+  });
+
+  function submitOrder() {
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const address = document.getElementById('address').value;
+    const city = document.getElementById('city').value;
+    const postalCode = document.getElementById('postal-code').value;
+    const paymentMethod = document.querySelector('input[name="payment-method"]:checked')?.value;
+
+    if (!paymentMethod) {
+      alert('Please select a payment method.');
+      return;
+    }
+
+    // Save data to localStorage
+    const orderDetails = {
+      name,
+      email,
+      address,
+      city,
+      postalCode,
+      paymentMethod,
+      product: JSON.parse(localStorage.getItem('cartProduct')),
+    };
+    localStorage.setItem('orderDetails', JSON.stringify(orderDetails));
+
+    // Redirect to order.html
+    window.location.href = 'end.html';
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+  // Retrieve form data from localStorage
+  const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+
+  if (orderDetails) {
+    document.getElementById('customer-name').textContent = orderDetails.name;
+    document.getElementById('customer-email').textContent = orderDetails.email;
+    document.getElementById('customer-address').textContent = orderDetails.address;
+    document.getElementById('customer-city').textContent = orderDetails.city;
+    document.getElementById('customer-postal-code').textContent = orderDetails.postalCode;
+    document.getElementById('payment-method').textContent = orderDetails.paymentMethod;
+  } else {
+    alert('No order details found.');
+  }
+});
+
+</script>
+
+
+  
+  <!-- footer -->
+  <section class="py-8 bg-grey-900 border-white-600 mt-3" style="background-color: rgb(219, 218, 218);">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-lg font-semibold mb-4">Subscribe on our newsletter</h1>
+      <p class="text-sm text-gray-600 mb-6">Get daily news on upcoming offers from many suppliers all over the world</p>
+      <form class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <input 
+          type="email" 
+          placeholder="Email" 
+          class="w-full sm:w-auto px-4 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300">
+        <button 
+          type="submit" 
+          class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+  <!-- Footer -->
+  <footer class="bg-grey-600 text-gray-600 border-white-100">
+    <!-- Section: Social media -->
+    <section class="flex justify-center lg:justify-between items-center p-4 border-b border-gray-300">
+      <!-- Social Icons -->
+      
+    </section>
+    <!-- Section: Social media -->
+  
+    <!-- Section: Links -->
+    <section class="container mx-auto py-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <!-- Brand Section -->
+        <div>
+          <div class="mb-4">
+            <img src="lock.png" alt="Orders Icon" class="w-10 h-10 mb-2">
+            <h2 class="text-blue-600 font-bold text-xl">Brand</h2>
+          </div>
+          <p class="text-sm">
+            Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+         
+          <ul class="flex justify-center space-x-4 p-4 list-none margin-left">
+            <li>
+              <i class="fab fa-facebook text-blue-600 text-2xl"></i>
+            </li>
+            <li>
+              <i class="fab fa-youtube text-red-600 text-2xl"></i>
+            </li>
+            <li>
+              <i class="fab fa-github text-gray-700 text-2xl"></i>
+            </li>
+            <li>
+              <i class="fab fa-linkedin text-blue-500 text-2xl"></i>
+            </li>
+          </ul>
+        </div>
+  
+        <!-- About Section -->
+        <div>
+          <h4 class="text-black font-bold text-lg mb-4">About</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-blue-500">About us</a></li>
+            <li><a href="#" class="hover:text-blue-500">Find Store</a></li>
+            <li><a href="#" class="hover:text-blue-500">Categories</a></li>
+            <li><a href="#" class="hover:text-blue-500">Blogs</a></li>
+          </ul>
+        </div>
+  
+        <!-- Partnership Section -->
+        <div>
+          <h4 class="text-black font-bold text-lg mb-4">Partnership</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-blue-500">About us</a></li>
+            <li><a href="#" class="hover:text-blue-500">Find Store</a></li>
+            <li><a href="#" class="hover:text-blue-500">Categories</a></li>
+            <li><a href="#" class="hover:text-blue-500">Blogs</a></li>
+          </ul>
+        </div>
+  
+        <!-- Information Section -->
+        <div>
+          <h4 class="text-black font-bold text-lg mb-4">Information</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-blue-500">About us</a></li>
+            <li><a href="#" class="hover:text-blue-500">Find Store</a></li>
+            <li><a href="#" class="hover:text-blue-500">Categories</a></li>
+            <li><a href="#" class="hover:text-blue-500">Blogs</a></li>
+          </ul>
+        </div>
+  
+        <!-- For Section -->
+        <div>
+          <h4 class="text-black font-bold text-lg mb-4">For User</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-blue-500">About us</a></li>
+            <li><a href="#" class="hover:text-blue-500">Find Store</a></li>
+            <li><a href="#" class="hover:text-blue-500">Categories</a></li>
+            <li><a href="#" class="hover:text-blue-500">Blogs</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Section: Links -->
+  
+    <!-- Copyright -->
+    <div class="border-t border-gray-300 py-4 " style="background-color: rgb(219, 218, 218)">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+        <span class="text-sm" style="color: rgb(26, 26, 25);">@2023 E-commerce</span>
+        <div class="flex items-center space-x-4 mt-2 md:mt-0">
+          <div class="flex items-center space-x-1">
+            <span>English USD</span>
+            <select class="border border-gray-300 rounded text-sm"></select>
+          </div>
+          <div class="flex items-center space-x-1">
+            <span>Ship to</span>
+            <select class="border border-gray-300 rounded text-sm"></select>
+            <img src="GER.webp" alt="Orders Icon" class="w-5 h-5">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright -->
+   </footer>
+
+   
+
+    
+</body>
+</html>
